@@ -1,0 +1,282 @@
+/********** Template CSS **********/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+    border-radius: 50px;
+}
+
+.btn-square { width: 38px; height: 38px; }
+.btn-sm-square { width: 32px; height: 32px; }
+.btn-lg-square { width: 48px; height: 48px; }
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: inherit;
+}
+
+.btn-primary {
+    color: var(--bs-white);
+}
+
+/*** Navbar ***/
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 25px;
+    padding: 40px 0;
+    color: var(--bs-white);
+    font-size: 17px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+}
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 300px;
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.page-header {
+    padding-top: 100px;
+}
+
+/*** Title ***/
+.title {
+    margin-bottom: 3rem;
+}
+
+.title .title-left,
+.title .title-center,
+.title .title-right {
+    display: inline-block;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    margin-top: 2.5rem;
+    overflow: hidden;
+}
+
+.service-item .service-img {
+    position: relative;
+    display: inline-block;
+}
+
+.service-item.service-item-left {
+    border-radius: 500px 0 0 500px;
+    background: linear-gradient(to right, #D9E9CF, #F0F0F0);
+}
+
+.service-item.service-item-right {
+    border-radius: 0 500px 500px 0;
+    background: linear-gradient(to left, #D9E9CF, #F0F0F0);
+}
+
+/*** Team / Testimonial (unused but kept) ***/
+.testimonial-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* FIX: Remove unwanted space around carousel */
+.container-fluid.p-0,
+#header-carousel,
+#header-carousel .carousel-inner,
+#header-carousel .carousel-item,
+#header-carousel .carousel-item.active {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#header-carousel .carousel-item img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+}
+
+.carousel-caption {
+    padding: 0 !important;
+    margin: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+}
+
+
+/**********************************
+        ⭐ MOBILE FIXES ⭐
+**********************************/
+@media (max-width: 768px) {
+
+    body, html {
+        overflow-x: hidden !important;
+    }
+
+    /* GENERAL PADDING FIX */
+    .container, .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* CAROUSEL FIX */
+    #header-carousel .carousel-item {
+        min-height: 222px;
+    }
+
+    #header-carousel .carousel-item img {
+        height: 300px !important;   /* adjust as needed */
+    }
+
+
+    .carousel-caption {
+        padding-top: 180px !important;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem !important;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem !important;
+    }
+
+    /* COUPLE NAME SECTION */
+    .h1 {
+        font-size: 2rem !important;
+        text-shadow: 1px 2px 4px black !important;
+    }
+
+    /* ABOUT IMAGE */
+    .col-lg-5 img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* SERVICE SECTION MOBILE FIX */
+    .service-item {
+        margin-top: 1rem !important;
+        border-radius: 20px !important;
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .service-item .service-img {
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .service-item .service-img img {
+        width: 70% !important;
+        margin: auto;
+    }
+
+    .rounded-circle {
+        width: 70% !important;
+        height: auto;
+        margin: auto;
+    }
+
+    .service-text {
+        padding: 10px 0 !important;
+        text-align: center !important;
+    }
+
+    .service-text h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .service-text h5,
+    .service-text p {
+        font-size: 1rem !important;
+    }
+
+    /* BANNER TEXT */
+    .title h1,
+    .title h5 {
+        font-size: 1.5rem !important;
+    }
+
+    p.fs-5 {
+        font-size: 1.1rem !important;
+    }
+
+    /* BUTTON FIX */
+    .btn {
+        padding: 8px 20px !important;
+        font-size: 1rem;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+        right: 15px !important;
+        bottom: 15px !important;
+    }
+}
